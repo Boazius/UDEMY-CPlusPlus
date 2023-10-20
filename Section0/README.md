@@ -53,3 +53,54 @@ now to run the exe simply navigate in the terminal to the project folder and ```
 
 
 ## Debugging:
+Now that we build the main.exe file, we can create a launch.json file for VSCode to know how to debug it.
+
+- press the Run button at the top, and press "Add configuration" to create launch.json
+  - press C++ (GDB/LLDB) for the configuration we want.
+  - now, we got an empty launch.json file, we need to press the add configuration button at the bottom and press (gdb) launch for the template to add.
+  - Give it a good ```name```, like "((gdb) - Build and debug active file)
+  - ```program``` should be ```${fileDirname}/${fileBasenameNoExtension}.exe``` for it to run the exe we made
+  - ```miDebuggerPath``` can be specified to the path of the gdb.exe debugger, or omitted entirely (it will find it in PATH).
+  - after ```"setupcommands": [.....]``` add ```,"preLaunchTask": "..."``` where ... needs to be the name of the task from tasks.json that builds the program, i.e ```C/C++: g++.exe build active file```
+
+example launch.json:
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "(gdb) - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file"
+        }
+
+    ]
+}
+
+```
