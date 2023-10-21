@@ -104,3 +104,5 @@ example launch.json:
 }
 
 ```
+
+now, simply run with F5 with some breakpoints and it will work as you expect.
