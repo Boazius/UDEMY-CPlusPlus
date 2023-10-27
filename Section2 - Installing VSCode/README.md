@@ -1,5 +1,5 @@
-# Section 0 - Setting up
-In this section im just figuring out how to set up the c++ compiler.
+# Section 2 - Setting up
+In this section we will install the IDE and c++ compiler
 
 - I'm gonna be using [Visual Studio code IDE](https://code.visualstudio.com/).
 - I used [MSYS2](https://www.msys2.org/) to install the relevant compilers.
@@ -11,7 +11,7 @@ In this section im just figuring out how to set up the c++ compiler.
 
 ### Make folders and files
 - Open the *Section* folder using VSCode
-- Create a new folder for the Project inside the SectionX, i.e Section1/Proj1
+- Create a new folder for the Project inside the SectionX, i.e /Section1/Proj1
 - Create .cpp file inside the proj1 folder, i.e main.cpp
 - open it and configure the intellisence for g++ if needed
 - make some Hello world program:
