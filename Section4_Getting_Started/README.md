@@ -12,6 +12,7 @@ the command for g++ is
 ```shell
 g++.exe -c -fdiagnostics-color=always -g -Wall -std=c++20 *.cpp
 ```
+
 the -c tag meaning it just compiles (creates .o files), doesnt link
 the -g tag enables debugging info to be included in the compiled object files
 
@@ -185,5 +186,31 @@ i made a task that does this in tasks.json:
 
 ```
 
-## FirstProgram
-just gets number from user and prints it back out.
+## Programs in this section
+- FirstProgram - just gets number from user and prints it back out.
+- CompilerErrors - Syntax and semantic errors
+- CompilerWarnings - things that can still run but may be dumb, like useless variables
+- LinkerErrors - when the .o files cannot be linked, for example having duplicate definitions or extern int x that isnt declared anywhere.
+
+currently, we cant see linker errors in the problems pane, we can only see it in the terminal, which is kinda not ideal..
+```shell
+ *  Executing task: g++ link all .o files into .exe 
+
+Starting build...
+Executing task: g++ link all .o files into .exe 
+
+Starting build...
+C:/msys64/ucrt64/bin/g++.exe S:\Programming\UDEMY-CPlusPlus\Section4_Getting_Started\LinkerErrors/*.o -o S:\Programming\UDEMY-CPlusPlus\Section4_Getting_Started\LinkerErrors/LinkerErrors.exe
+C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: S:\Programming\UDEMY-CPlusPlus\Section4_Getting_Started\LinkerErrors/main.o:main.cpp:(.rdata$.refptr.x[.refptr.x]+0x0): undefined reference to `x'
+collect2.exe: error: ld returned 1 exit status
+
+Build finished with error(s).
+
+ *  The terminal process failed to launch (exit code: -1). 
+```
+
+### Runtime Errors
+anything like divide by zero, or file not found - stuff that cant be determined at compile time.
+
+### Logic Errors
+are not errors per se, but they make our program run not as we intended it, these are tricky to fix.
