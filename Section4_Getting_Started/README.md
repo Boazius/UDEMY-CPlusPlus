@@ -214,3 +214,8 @@ anything like divide by zero, or file not found - stuff that cant be determined 
 
 ### Logic Errors
 are not errors per se, but they make our program run not as we intended it, these are tricky to fix.
+
+
+## Challenge program
+user gets prompt for favorite number
+program reads number and outputs it back..
