@@ -1,7 +1,8 @@
 {
 	"version": "2.0.0",
 	"tasks": [
-		{	"label": "g++ build exe",
+		{
+			"label": "g++ build exe",
 			"type": "cppbuild",
 			"command": "C:/msys64/ucrt64/bin/g++.exe",
 			"args": [
@@ -25,8 +26,8 @@
 			},
 			"detail": "compiles and links the .cpp files in current folder, into .exe file"
 		},
-
-		{	"label": "g++ compile current single file into .o ",
+		{
+			"label": "g++ compile current single file into .o ",
 			"type": "cppbuild",
 			"command": "C:/msys64/ucrt64/bin/g++.exe",
 			"args": [
@@ -40,11 +41,13 @@
 				"${fileDirname}/${fileBasenameNoExtension}.o"
 			],
 			"group": "build",
-			"problemMatcher": ["$gcc"],
+			"problemMatcher": [
+				"$gcc"
+			],
 			"detail": "compiling ${file} to .o file"
 		},
-
-		{	"label": "g++ compile all .cpp files into .o files",
+		{
+			"label": "g++ compile all .cpp files into .o files",
 			"type": "cppbuild",
 			"command": "C:/msys64/ucrt64/bin/g++.exe",
 			"args": [
@@ -59,11 +62,47 @@
 				"cwd": "${fileDirname}"
 			},
 			"group": "build",
-			"problemMatcher": ["$gcc"],
+			"problemMatcher": [
+				"$gcc"
+			],
 			"detail": "compiling all cpp files to object files in the current folder"
 		},
-
-		{	"label": "g++ link all .o files into .exe",
+		{
+			"label": "g++ link all .o files into .exe",
+			"type": "cppbuild",
+			"command": "C:/msys64/ucrt64/bin/g++.exe",
+			"args": [
+				"${fileDirname}\\*.o",
+				"-o",
+				"${fileDirname}\\${fileDirnameBasename}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"detail": "linking all object files into ${fileDirname}.exe"
+		},
+		{
+			"label": "clean .exe and .o",
+			"command": "cmd",
+			"args": [
+				"/C",
+				"del",
+				"${fileDirname}\\*.exe",
+				"${fileDirname}\\*.o"
+			],
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "delete built files with .o and .exe extensions in the current folder"
+		},
+		{
+			"label": "g++ link all .o files into .exe",
 			"type": "cppbuild",
 			"command": "C:/msys64/ucrt64/bin/g++.exe",
 			"args": [
@@ -75,19 +114,10 @@
 				"cwd": "${fileDirname}"
 			},
 			"group": "build",
-			"problemMatcher": ["$gcc"],
+			"problemMatcher": [
+				"$gcc"
+			],
 			"detail": "linking all object files into ${fileDirname}.exe"
-		},
-
-		{	"label": "clean .exe and .o",
-		"command": "cmd",
-		"args": ["/C", "del", "${fileDirname}\\*.exe", "${fileDirname}\\*.o"],
-		"type": "shell",
-		"group": {
-			"kind": "build",
-			"isDefault": true
-		},
-		"detail": "delete built files with .o and .exe extensions in the current folder"
-	},
+		}
 	]
 }
