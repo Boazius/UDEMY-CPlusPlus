@@ -92,7 +92,7 @@ we can also chain the cin:
 cin >> num1 >> num2; 
 ```
 
-### Nuance
+### Additional Notes
 now, the cin will read an integer until its end, then end can be a dot though
 so we might face an issue like this:
 ![Alt text](images/cinBad.png)
