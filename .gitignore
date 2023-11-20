@@ -3,3 +3,4 @@
 
 # Ignore object files
 *.o
+Section6_Variables/initVars/main.o
