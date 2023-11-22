@@ -1,7 +1,6 @@
 #include <iostream>
 
 int main() {
-    int room_length {0};
     
 
     //get room width
@@ -10,7 +9,7 @@ int main() {
     std::cin >> room_width;
     
     //get room length
-    int room_width {0};
+    int room_length {0};
     std::cout << "Enter the length of the room" << std::endl;
     std::cin >> room_length;
 
