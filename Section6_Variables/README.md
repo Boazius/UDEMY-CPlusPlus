@@ -28,3 +28,4 @@ these are the laws, but its important to have a consistent style:
 
 ![Alt text](images/initVar.png)
 the instructor encourages the int age {21} style, because it is consistent in c++11 and onwards
+
