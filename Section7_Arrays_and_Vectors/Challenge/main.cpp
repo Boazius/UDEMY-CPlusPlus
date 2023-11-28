@@ -1,11 +1,12 @@
 #include <iostream>
 #include <vector>
 
-int main() {
-    using std::vector;
+int main()
+{
+    using std::cin;
     using std::cout;
     using std::endl;
-    using std::cin;
+    using std::vector;
 
     vector<int> vector1;
     vector<int> vector2;
@@ -24,25 +25,20 @@ int main() {
     vector_2d.push_back(vector2);
 
     // display vector_2d:
-    cout << "vector_2d is \n{\n" <<
-                             "   {" << vector_2d.at(0).at(0) << ',' << vector_2d.at(0).at(1) << "},\n"<<
-                             "   {" << vector_2d.at(1).at(0) << ',' << vector_2d.at(1).at(1) << "}\n" <<
-                             "}\n";
-    
+    cout << "vector_2d is \n{\n"
+         << "   {" << vector_2d.at(0).at(0) << ',' << vector_2d.at(0).at(1) << "},\n"
+         << "   {" << vector_2d.at(1).at(0) << ',' << vector_2d.at(1).at(1) << "}\n"
+         << "}\n";
 
     vector1.at(0) = 1000;
 
-
     // display vector_2d:
-    cout << "vector_2d is \n{\n" <<
-                             "   {" << vector_2d.at(0).at(0) << ',' << vector_2d.at(0).at(1) << "},\n"<<
-                             "   {" << vector_2d.at(1).at(0) << ',' << vector_2d.at(1).at(1) << "}\n" <<
-                             "}\n";
-    
+    cout << "vector_2d is \n{\n"
+         << "   {" << vector_2d.at(0).at(0) << ',' << vector_2d.at(0).at(1) << "},\n"
+         << "   {" << vector_2d.at(1).at(0) << ',' << vector_2d.at(1).at(1) << "}\n"
+         << "}\n";
+
     cout << "vector1 is {" << vector1.at(0) << "," << vector1.at(1) << "}\n";
-    
-
-
 
     return 0;
 }
