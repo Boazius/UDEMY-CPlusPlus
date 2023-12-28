@@ -102,7 +102,7 @@
 			"detail": "delete built files with .o and .exe extensions in the current folder"
 		},
 		{
-			"label": "g++ link all .o files into .exe",
+			"label": "bleh blash",
 			"type": "cppbuild",
 			"command": "C:/msys64/ucrt64/bin/g++.exe",
 			"args": [
